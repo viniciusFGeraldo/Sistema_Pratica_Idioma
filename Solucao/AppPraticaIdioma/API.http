@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:5115
+
+###inicio
+GET {{baseUrl}}/
+
+### Cadastrar frase
+POST {{baseUrl}}/phrase/cadastrar
+Content-Type: application/json
+
+{
+    "nativeLanguage": "eu bebo café 3",
+    "foreignLanguage": "I drink coffee 3"
+}
+
+### todas as frases
+GET {{baseUrl}}/phrase/listar
+
+### Buscar por Id
+GET {{baseUrl}}/phrase/buscar/1
+
+### alterar frase
+PUT {{baseUrl}}/phrase/alterar/2
+Content-Type: application/json
+
+{
+    "nativeLanguage": "eu durmo de tarde",
+    "foreignLanguage": "I sleep in the afternoon"
+}
+
+### deletar frase
+DELETE {{baseUrl}}/phrase/deletar/3
+
+### reproduzir frase em portugues
+POST {{baseUrl}}/phrases/speak/1?speakInEnglish=false
+
+### reproduzir frase em ingles
+POST {{baseUrl}}/phrases/speak/1?speakInEnglish=true
